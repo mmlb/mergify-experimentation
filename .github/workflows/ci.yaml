@@ -8,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: fake work
-        run: sleep 45
+        run: sleep 90
