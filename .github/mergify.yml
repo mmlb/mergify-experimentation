@@ -1,3 +1,10 @@
+queue_rules:
+  - name: default
+    conditions:
+      # Conditions to get out of the queue (= merged)
+      - check-success=DCO
+      - check-success=verify
+
 pull_request_rules:
   - name: Automatic merge on approval
     conditions:
@@ -7,7 +14,9 @@ pull_request_rules:
       - label=ready-to-merge
       - label!=do-not-merge
     actions:
-      merge:
+      queue:
+        method: merge
+        name: default
         commit_message_template: |
           {{ title }} (#{{ number }})
 
