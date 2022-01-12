@@ -1,0 +1,14 @@
+pull_request_rules:
+  - name: Automatic merge on approval
+    conditions:
+      - base=main
+      - "#review-requested=0"
+      - "#changes-requested-reviews-by=0"
+      - label=ready-to-merge
+      - label!=do-not-merge
+    actions:
+      merge:
+        commit_message_template: |
+          {{ title }} (#{{ number }})
+
+          {{ body }}
