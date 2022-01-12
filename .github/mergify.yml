@@ -1,10 +1,26 @@
-queue_rules:
-  - name: default
-    conditions:
-      # Conditions to get out of the queue (= merged)
-      - check-success=DCO
-      - check-success=verify
-
+#queue_rules:
+#  - name: default
+#    conditions:
+#      # Conditions to get out of the queue (= merged)
+#      - check-success=DCO
+#      - check-success=verify
+#
+#pull_request_rules:
+#  - name: Automatic merge on approval
+#    conditions:
+#      - base=main
+#      - "#review-requested=0"
+#      - "#changes-requested-reviews-by=0"
+#      - label=ready-to-merge
+#      - label!=do-not-merge
+#    actions:
+#      queue:
+#        method: merge
+#        name: default
+#        commit_message_template: |
+#          {{ title }} (#{{ number }})
+#
+#          {{ body }}
 pull_request_rules:
   - name: Automatic merge on approval
     conditions:
@@ -13,10 +29,10 @@ pull_request_rules:
       - "#changes-requested-reviews-by=0"
       - label=ready-to-merge
       - label!=do-not-merge
+      - check-success=DCO
+      - check-success=verify
     actions:
-      queue:
-        method: merge
-        name: default
+      merge:
         commit_message_template: |
           {{ title }} (#{{ number }})
 
