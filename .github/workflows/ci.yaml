@@ -1,0 +1,11 @@
+name: For each commit and PR
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: fake work
+        run: sleep 45
