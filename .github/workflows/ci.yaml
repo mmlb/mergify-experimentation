@@ -8,4 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: fake work
-        run: sleep 90
+        run: |
+          set -x
+          command=true
+          sleep 90
+          echo hi
+          if $command; then
+            exit 0
+          else
+            exit 1
+          fi
