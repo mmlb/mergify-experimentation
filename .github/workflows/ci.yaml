@@ -13,7 +13,7 @@ jobs:
           command=true
           sleep 90
           echo hi
-          if $command; then
+          if ! $command; then
             exit 0
           else
             exit 1
