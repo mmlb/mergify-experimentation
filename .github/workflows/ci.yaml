@@ -10,11 +10,13 @@ jobs:
       - name: fake work
         run: |
           set -x
-          command=false
-          sleep 90
-          echo hi
-          if $command; then
-            exit 1
-          else
+          num=0
+          num=$((num+10))
+          sleep 45
+          num=$((num+10))
+          sleep 45
+          if ((num < 30)); then
             exit 0
+          else
+            exit 1
           fi
