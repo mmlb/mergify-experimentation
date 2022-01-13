@@ -1,4 +1,4 @@
-name: For each commit and PR
+name: For each push and PR
 on:
   push:
   pull_request:
@@ -12,9 +12,9 @@ jobs:
           set -x
           num=0
           num=$((num+10))
-          sleep 45
+          sleep 15
           num=$((num+10))
-          sleep 45
+          sleep 15
           if ((num < 30)); then
             exit 0
           else
