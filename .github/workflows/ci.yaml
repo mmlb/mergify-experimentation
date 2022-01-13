@@ -13,7 +13,7 @@ jobs:
           num=0
           num=$((num+10))
           sleep 15
-          num=$((num+10))
+          num=$((num+19))
           sleep 15
           if ((num < 30)); then
             exit 0
