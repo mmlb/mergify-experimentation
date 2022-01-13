@@ -11,11 +11,11 @@ jobs:
         run: |
           set -x
           num=0
-          num=$((num+19))
+          num=$((num+20))
           sleep 15
-          num=$((num+19))
+          num=$((num+20))
           sleep 15
-          if ((num < 30)); then
+          if ((num < 50)); then
             exit 0
           else
             exit 1
